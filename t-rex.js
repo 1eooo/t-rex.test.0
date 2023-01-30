@@ -6,8 +6,8 @@ img.src = "./character1.png";
 
 
 let character = {
-    x : 0,
-    y : 475,
+    x : 425,
+    y : 425,
     w : 50,
     h : 50,
     speed : 25,
@@ -21,10 +21,10 @@ let character = {
     },
     movingLimit(){
         console.log('x : ' + this.x + ', y : '+ this.y);
-        if(this.y > 475) {
+        if(this.y > 850) {
             console.log('y stop');
             // this.clear();
-            this.y = 475;
+            this.y = 850;
             // this.draw();
             return false;
         }
@@ -37,10 +37,10 @@ let character = {
             return false;
         }
     
-        if(this.x > 875) {
+        if(this.x > 850) {
             console.log('x stop');
             // this.clear();
-            this.x = 875;
+            this.x = 850;
             // this.draw();
             return false;
         }

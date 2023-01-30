@@ -25,11 +25,30 @@ function frameDraw(){
     }
     
     obstacleArr.forEach((obVal, i, o)=>{
-        if(obVal.x < 0){
+        if(obVal.x < 0 || obVal.y < 0 || obVal.x > 950 || obVal.y > 950){
             o.splice(i, 1)
         }
         crashCheck(character, obVal);
-        obVal.x -= obVal.speed;
+        
+        switch(obVal.start){
+            case 1 :
+                obVal.x += obVal.speedX;
+                obVal.y -= obVal.speedY;
+                break;
+            case 2 :
+                obVal.x -= obVal.speedX;
+                obVal.y -= obVal.speedY;
+                break;
+            case 3 :
+                obVal.x += obVal.speedX;
+                obVal.y -= obVal.speedY;
+                break;
+            case 4 :
+                obVal.x += obVal.speedX;
+                obVal.y += obVal.speedY;
+                break;
+        }
+
         obVal.draw();
     })
     

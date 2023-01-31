@@ -30,36 +30,18 @@ class Obstacles {
 
         this.w = 10;
         this.h = 10;
-        this.speed = 2;
-        this.speedX = Math.floor(Math.random() * 3 + 1);
-        this.speedY = Math.floor(Math.random() * 3 + 1);
-       
+        this.speed = 1;
+        this.speedX = Math.floor(Math.random() * 2);
+
+        if(this.speedX == 0){
+            this.speedY = Math.floor(Math.random() * 3 + 1);
+        } else {
+            this.speedY = Math.floor(Math.random() * 3);
+        }
     }
 
     draw(){
         ctx.fillStyle = '#F2F5A9';
-        // console.log('start : ' + this.start);
-        // console.log('speedX : ' + this.speedX);
-        // console.log('speedY : ' + this.speedY);
-
-        // switch(this.start){
-        //     case 1 :
-        //         this.y = this.positionY*30;
-        //         this.y = this.positionY*30;
-        //         break;
-        //     case 2 :
-        //         this.x = this.positionX*30;
-        //         break;
-        //     case 3 :
-        //         this.x = 0;
-        //         this.y = this.positionY*30;
-        //         break;
-        //     case 4 :
-        //         this.x = this.positionX*30;
-        //         this.y = 0;
-        //         break;
-        // }
-        
         ctx.fillRect(this.x, this.y, this.w, this.h);
         // ctx.drawImage(img2, this.x, this.y, this.w, this.h);
     }

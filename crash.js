@@ -25,6 +25,7 @@ function crashCheck(character, obstacle){
         && (obs2x > char3x && obs2y < char3y)
         && (obs3x < char2x && obs3y > char2y)){
         cancelAnimationFrame(animation);
+        // readScore();
     }
 
 }
